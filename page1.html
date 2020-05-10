@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="page1.css">
+    <script async src="page1.js"></script>
+    <script type=”text/javascript” src=https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js></script>
+    <title>UBC FY Calculator</title>
+  </head>
+  
+  <body class="background">
+      <div>
+          <h2>Welcome to the UBC FY Calculator!</h2>
+      </div>
+      
+      <div class="CP">
+          <h4>3D CROSS & DOT PRODUCT</h4>
+            <table> 
+                <tr style="text-align:center;"> 
+                    <td><b>Vector 1</b></td> 
+                    <td><b>Vector 2</b></td> 
+                </tr> 
+                <tr  style="width:10;"> 
+                <td><input type="number" id="vectora1" name="vectora1"></td> 
+                <td><input type="number" id="vectorb1" name="vectorb1"></td> 
+                </tr> 
+                <tr style="width:10;"> 
+                    <td><input type="number" id="vectora2" name="vectora2" ></td> 
+                    <td><input type="number" id="vectorb2" name="vectorb2"></td> 
+                </tr> 
+                <tr style="width:100px;"> 
+                    <td><input type="number" id="vectora3" name="vectora3"></td> 
+                    <td><input type="number" id="vectorb3" name="vectorb3"></td> 
+                </tr> 
+            </table> 
+            <input onclick="calculateCP()" type="button" value="Calculate" style="text-align:center;margin-top:10;margin-bottom:20;">
+            <form action="/action_page.php">
+                <label for="dp">Dot Product = </label>
+                <input type="text" id="dp" name="dp" style="text-align:center"> <br><br>
+                <label for="cp">Cross Product = </label>
+                <input type="text" id="cp1" name="cp1" style="text-align:center"><br>
+                <input type="text" id="cp2" name="cp2" style="text-align:center;margin-top:5;margin-left:105;"><br>
+                <input type="text" id="cp3" name="cp3" style="text-align:center;margin-top:5;margin-left:105;">
+            </form>
+      </div>
+  </body>
+</html>

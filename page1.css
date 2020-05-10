@@ -1,0 +1,19 @@
+
+.CP {
+    float: left; 
+    border-style: solid;
+    text-align:center;
+    position:relative;
+    background-color: indianred;
+}
+
+h4 {
+    border: dotted; 
+    padding: 5;
+    border-top: 20;
+    margin-top: auto;
+}
+
+.background {
+    background-color: antiquewhite;
+}
