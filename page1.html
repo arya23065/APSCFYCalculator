@@ -10,36 +10,105 @@
       <div>
           <h2>Welcome to the UBC FY Calculator!</h2>
       </div>
+
+      <div class="bar">
+        <a href="page1.html" class="bar">Calculator</a>
+        <a href="#" class="bar">Notes</a>
+        <a href="#" class="bar">Stress Reliever</a>
+      </div>
       
+      <div class="Calculator">
+          <h4>SCIENTIFIC CALCULATOR</h4>
+          <table> 
+            <form name = "Calculator">                      
+            <tr> 
+                <td colspan="6"><input type="text" name="calcDisplay" onkeypress="return event.charCode >= 48 && event.charCode <= 57" style="width:100%;"> </td> 
+            </tr> 
+            <tr> 
+                <td><input type="button" class="calcButton" value="1" onclick="Calculator.calcDisplay.value+='1'"> </td> 
+                <td><input type="button" class="calcButton" value="2" onclick="Calculator.calcDisplay.value+='2'"> </td> 
+                <td><input type="button" class="calcButton" value="3" onclick="Calculator.calcDisplay.value+='3'"> </td> 
+                <td><input type="button" class="calcButton" value="C" onclick="Calculator.calcDisplay.value=''"> </td> 
+                <td><input type="button" class="calcButton" value="DEL" onclick="backspace(this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="=" onclick="evaluate(this.form)"> </td> 
+            </tr> 
+            <tr> 
+                <td><input type="button" class="calcButton" value="4" onclick="Calculator.calcDisplay.value+='4'"> </td> 
+                <td><input type="button" class="calcButton" value="5" onclick="Calculator.calcDisplay.value+='5'"> </td> 
+                <td><input type="button" class="calcButton" value="6" onclick="Calculator.calcDisplay.value+='6'"> </td> 
+                <td><input type="button" class="calcButton" value="-" onclick="Calculator.calcDisplay.value+='-'"> </td> 
+                <td><input type="button" class="calcButton" value="%" onclick="Calculator.calcDisplay.value+='%'"> </td> 
+                <td><input type="button" class="calcButton" value="cos" onclick="Calculator.calcDisplay.value+='cos('"> </td> 
+            </tr>   
+            <tr> 
+                <td><input type="button" class="calcButton" value="7" onclick="Calculator.calcDisplay.value+='7'"> </td> 
+                <td><input type="button" class="calcButton" value="8" onclick="Calculator.calcDisplay.value+='8'"> </td> 
+                <td><input type="button" class="calcButton" value="9" onclick="Calculator.calcDisplay.value+='9'"> </td> 
+                <td><input type="button" class="calcButton" value="*" onclick="Calculator.calcDisplay.value+='*'"> </td> 
+                <td><input type="button" class="calcButton" value="!" onclick="Calculator.calcDisplay.value+='!'"> </td> 
+                <td><input type="button" class="calcButton" value="sin" onclick="Calculator.calcDisplay.value+='sin('"> </td> 
+            </tr> 
+            <tr> 
+                <td><input type="button" class="calcButton" value="." onclick="Calculator.calcDisplay.value+='.'"> </td> 
+                <td><input type="button" class="calcButton" value="0" onclick="Calculator.calcDisplay.value+='0'"> </td> 
+                <td><input type="button" class="calcButton" value="," onclick="Calculator.calcDisplay.value+=','"> </td> 
+                <td><input type="button" class="calcButton" value="+" onclick="Calculator.calcDisplay.value+='+'"> </td> 
+                <td><input type="button" class="calcButton" value="/" onclick="Calculator.calcDisplay.value+='/'"> </td> 
+                <td><input type="button" class="calcButton" value="tan" onclick="Calculator.calcDisplay.value+='tan('"> </td> 
+            </tr> 
+            <tr>
+                <td><input type="button" class="calcButton" value="e" onclick="Calculator.calcDisplay.value+='e'"> </td> 
+                <td><input type="button" class="calcButton" value="PI" onclick="Calculator.calcDisplay.value+='Math.PI'"> </td> 
+                <td><input type="button" class="calcButton" value="^" onclick="Calculator.calcDisplay.value+='Math.pow('"> </td> 
+                <td><input type="button" class="calcButton" value="(" onclick="Calculator.calcDisplay.value+='('"> </td> 
+                <td><input type="button" class="calcButton" value=")" onclick="Calculator.calcDisplay.value+=')'"> </td> 
+                <td><input type="button" class="calcButton" value="log" onclick="Calculator.calcDisplay.value+='Math.log('"> </td>              
+            <tr>
+                <td><input type="button" class="calcButton" value="sqrt" onclick="Calculator.calcDisplay.value+='Math.sqrt('"> </td> 
+                <td><input type="button" class="calcButton" value="ln2" onclick="Calculator.calcDisplay.value+='Math.LN2'"> </td> 
+                <td><input type="button" class="calcButton" value="ln10" onclick="Calculator.calcDisplay.value+='Math.Log10'"> </td> 
+                <td><input type="button" class="calcButton" value="l2e" onclick="Calculator.calcDisplay.value+='Math.LOG2E'"> </td> 
+                <td><input type="button" class="calcButton" value="l10e" onclick="Calculator.calcDisplay.value+='Math.log10'"> </td> 
+                <td><input type="button" class="calcButton" value="exp" onclick="Calculator.calcDisplay.value+='Math.exp('"> </td> 
+            </tr> 
+            </form> 
+          </table> 
+      </div>
+
       <div class="CP">
-          <h4>3D CROSS & DOT PRODUCT</h4>
-            <table> 
-                <tr style="text-align:center;"> 
-                    <td><b>Vector 1</b></td> 
-                    <td><b>Vector 2</b></td> 
-                </tr> 
-                <tr  style="width:10;"> 
-                <td><input type="number" id="vectora1" name="vectora1"></td> 
-                <td><input type="number" id="vectorb1" name="vectorb1"></td> 
-                </tr> 
-                <tr style="width:10;"> 
-                    <td><input type="number" id="vectora2" name="vectora2" ></td> 
-                    <td><input type="number" id="vectorb2" name="vectorb2"></td> 
-                </tr> 
-                <tr style="width:100px;"> 
-                    <td><input type="number" id="vectora3" name="vectora3"></td> 
-                    <td><input type="number" id="vectorb3" name="vectorb3"></td> 
-                </tr> 
-            </table> 
-            <input onclick="calculateCP()" type="button" value="Calculate" style="text-align:center;margin-top:10;margin-bottom:20;">
-            <form action="/action_page.php">
-                <label for="dp">Dot Product = </label>
-                <input type="text" id="dp" name="dp" style="text-align:center"> <br><br>
-                <label for="cp">Cross Product = </label>
-                <input type="text" id="cp1" name="cp1" style="text-align:center"><br>
-                <input type="text" id="cp2" name="cp2" style="text-align:center;margin-top:5;margin-left:105;"><br>
-                <input type="text" id="cp3" name="cp3" style="text-align:center;margin-top:5;margin-left:105;">
-            </form>
+        <h4>3D CROSS & DOT PRODUCT</h4>
+          <table> 
+              <tr style="text-align:center;"> 
+                  <td><b>Vector 1</b></td> 
+                  <td><b>Vector 2</b></td> 
+              </tr> 
+              <tr  style="width:10;"> 
+              <td><input type="number" id="vectora1" name="vectora1"></td> 
+              <td><input type="number" id="vectorb1" name="vectorb1"></td> 
+              </tr> 
+              <tr style="width:10;"> 
+                  <td><input type="number" id="vectora2" name="vectora2" ></td> 
+                  <td><input type="number" id="vectorb2" name="vectorb2"></td> 
+              </tr> 
+              <tr style="width:100px;"> 
+                  <td><input type="number" id="vectora3" name="vectora3"></td> 
+                  <td><input type="number" id="vectorb3" name="vectorb3"></td> 
+              </tr> 
+          </table> 
+          <input type="button" value="Calculate" onclick="calculateCP()" style="text-align:center;margin-top:10;margin-bottom:20; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+          <form action="/action_page.php">
+              <label for="dp">Dot Product = </label>
+              <input type="text" id="dp" name="dp" style="text-align:center"> <br><br>
+              <label for="cp">Cross Product = </label>
+              <input type="text" id="cp1" name="cp1" style="text-align:center"><br>
+              <input type="text" id="cp2" name="cp2" style="text-align:center;margin-top:5;margin-left:105;"><br>
+              <input type="text" id="cp3" name="cp3" style="text-align:center;margin-top:5;margin-left:105;">
+          </form>
+      </div>
+
+      <div class="ScratchPaper">
+          <h4>SCRATCH PAPER</h4><br>
+          <textarea rows="50" cols="80" id="Paper"></textarea><br>
       </div>
   </body>
 </html>
