@@ -33,29 +33,57 @@ function clearCalc(Calculator) {
 }
 
 function calcClick(entry, Calculator) {
-    if (entry == "cos(" || entry == "sin("|| entry == "tan(") {
-        clearCalc(Calculator);
-    }
     equation = equation.concat(String(entry));
     Calculator.calcDisplay.value = equation;
-    if(entry == "%") evaluate(Calculator);
 }
+
+operations = ['-', '+', '/', '*']
           
-function evaluateCalc(Calculator) {               
-    if (Calculator.calcDisplay.value.includes("!")) {           
-        var entryLength = Calculator.calcDisplay.value.length; 
-        n = Number(Calculator.calcDisplay.value.substring(0, entryLength-1)); 
-        f = 1; 
-                  
-        for(i = 2; i <= n; i++) 
-            f = f*i; 
+function evaluateCalc(Calculator) {   
+    while (equation.includes("!")) {
+        factorialStart = 0; 
+        factorialStop = 0; 
 
-        Calculator.calcDisplay.value = f; 
+        for(i = 0; i < equation.length; i++) {
+            if(operations.includes(equation[i])) { 
+                factorialStart = i + 1; 
+            } else if (equation[i] == '!') {
+                factorialStop = i; 
+                break;
+            }
+        }
 
-    } else if(Calculator.calcDisplay.value.includes("%")) { 
-        var entryLength = Calculator.calcDisplay.value.length; 
-        n = Number(Calculator.calcDisplay.value.substring(0, entryLength-1)); 
-        Calculator.calcDisplay.value = n/100; 
-    } else     
-    Calculator.calcDisplay.value = eval(Calculator.calcDisplay.value); 
+        factorialOf = eval(equation.substring(factorialStart, factorialStop));
+        factorial = 1;
+                         
+        for(i = 2; i <= factorialOf; i++) 
+            factorial = factorial*i; 
+
+        equation = equation.substring(0, factorialStart).concat(String(factorial).concat(equation.substring(factorialStop + 1, equation.length)));
+    }
+
+    while (equation.includes("%")) {
+        percentageStart = 0; 
+        percentageStop = 0; 
+
+        for(i = 0; i < equation.length; i++) {
+            if(operations.includes(equation[i])) { 
+                percentageStart = i + 1; 
+            } else if (equation[i] == '%') {
+                percentageStop = i; 
+                break;
+            }
+        }
+
+        // Calculator.calcDisplay.value = equation.substring(percentageStart, percentageStop); 
+
+        percentageOf = eval(equation.substring(percentageStart, percentageStop));
+        percentage = percentageOf/100;
+        // Calculator.calcDisplay.value = equation.substring(percentageStart, percentageStop); 
+        equation = equation.substring(0, percentageStart).concat(String(percentage).concat(equation.substring(percentageStop + 1, equation.length)));
+    }
+
+    result = eval(equation).toFixed(4); 
+    if (result == "NaN") alert('This equation cannot be solved');
+    else Calculator.calcDisplay.value = result; 
 } 
