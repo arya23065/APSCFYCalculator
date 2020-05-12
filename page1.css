@@ -6,7 +6,7 @@
     border-radius: 25px;
     text-align:center;
     position:relative;
-    background-color: palegoldenrod;
+    background-color: lightsalmon;
 }
 
 h4 {
@@ -46,7 +46,7 @@ a:hover {
     border-radius: 25px;
     text-align:center;
     position:relative;
-    background-color: palegoldenrod;
+    background-color: lightsalmon;
 }
 
 .ScratchPaper {
@@ -61,15 +61,15 @@ a:hover {
     border-style: solid;
     border-radius: 25px;
     text-align:center;
-    background-color: white;
+    background-color: lightcyan;
 }
 
 #Paper {
     background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url("https://i.stack.imgur.com/4kvph.jpg");
     /* background-position: 80% 50%; */
     background-size: cover;
-    text-size-adjust: 100%;
-    font-size: 14px; 
+    /* text-size-adjust: 100%; */
+    font-size: 16px; 
 }
   
 .calcButton {  
@@ -77,4 +77,5 @@ a:hover {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100%;
     height: 37;
+    max-width: 50px;
 }  

@@ -19,57 +19,57 @@
       
       <div class="Calculator">
           <h4>SCIENTIFIC CALCULATOR</h4>
-          <table> 
+          <table>
             <form name = "Calculator">                      
             <tr> 
                 <td colspan="6"><input type="text" name="calcDisplay" onkeypress="return event.charCode >= 48 && event.charCode <= 57" style="width:100%;"> </td> 
             </tr> 
             <tr> 
-                <td><input type="button" class="calcButton" value="1" onclick="Calculator.calcDisplay.value+='1'"> </td> 
-                <td><input type="button" class="calcButton" value="2" onclick="Calculator.calcDisplay.value+='2'"> </td> 
-                <td><input type="button" class="calcButton" value="3" onclick="Calculator.calcDisplay.value+='3'"> </td> 
-                <td><input type="button" class="calcButton" value="C" onclick="Calculator.calcDisplay.value=''"> </td> 
-                <td><input type="button" class="calcButton" value="DEL" onclick="backspace(this.form)"> </td> 
-                <td><input type="button" class="calcButton" value="=" onclick="evaluate(this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="1" onclick="calcClick('1', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="2" onclick="calcClick('2', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="3" onclick="calcClick('3', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="C" onclick="clearCalc(this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="DEL" onclick="backspaceCalc(this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="=" onclick="evaluateCalc(this.form)"> </td> 
             </tr> 
             <tr> 
-                <td><input type="button" class="calcButton" value="4" onclick="Calculator.calcDisplay.value+='4'"> </td> 
-                <td><input type="button" class="calcButton" value="5" onclick="Calculator.calcDisplay.value+='5'"> </td> 
-                <td><input type="button" class="calcButton" value="6" onclick="Calculator.calcDisplay.value+='6'"> </td> 
-                <td><input type="button" class="calcButton" value="-" onclick="Calculator.calcDisplay.value+='-'"> </td> 
-                <td><input type="button" class="calcButton" value="%" onclick="Calculator.calcDisplay.value+='%'"> </td> 
-                <td><input type="button" class="calcButton" value="cos" onclick="Calculator.calcDisplay.value+='cos('"> </td> 
+                <td><input type="button" class="calcButton" value="4" onclick="calcClick('4', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="5" onclick="calcClick('5', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="6" onclick="calcClick('6', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="-" onclick="calcClick('-', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="%" onclick="calcClick('%', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="cos" onclick="calcClick('cos(', this.form)"> </td> 
             </tr>   
             <tr> 
-                <td><input type="button" class="calcButton" value="7" onclick="Calculator.calcDisplay.value+='7'"> </td> 
-                <td><input type="button" class="calcButton" value="8" onclick="Calculator.calcDisplay.value+='8'"> </td> 
-                <td><input type="button" class="calcButton" value="9" onclick="Calculator.calcDisplay.value+='9'"> </td> 
-                <td><input type="button" class="calcButton" value="*" onclick="Calculator.calcDisplay.value+='*'"> </td> 
-                <td><input type="button" class="calcButton" value="!" onclick="Calculator.calcDisplay.value+='!'"> </td> 
-                <td><input type="button" class="calcButton" value="sin" onclick="Calculator.calcDisplay.value+='sin('"> </td> 
+                <td><input type="button" class="calcButton" value="7" onclick="calcClick('7', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="8" onclick="calcClick('8', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="9" onclick="calcClick('9', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="*" onclick="calcClick('*', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="!" onclick="calcClick('!', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="sin" onclick="calcClick('sin(', this.form)"> </td> 
             </tr> 
             <tr> 
-                <td><input type="button" class="calcButton" value="." onclick="Calculator.calcDisplay.value+='.'"> </td> 
-                <td><input type="button" class="calcButton" value="0" onclick="Calculator.calcDisplay.value+='0'"> </td> 
-                <td><input type="button" class="calcButton" value="," onclick="Calculator.calcDisplay.value+=','"> </td> 
-                <td><input type="button" class="calcButton" value="+" onclick="Calculator.calcDisplay.value+='+'"> </td> 
-                <td><input type="button" class="calcButton" value="/" onclick="Calculator.calcDisplay.value+='/'"> </td> 
-                <td><input type="button" class="calcButton" value="tan" onclick="Calculator.calcDisplay.value+='tan('"> </td> 
+                <td><input type="button" class="calcButton" value="." onclick="calcClick('.', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="0" onclick="calcClick('0', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="," onclick="calcClick(',', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="+" onclick="calcClick('+', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="/" onclick="calcClick('/', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="tan" onclick="calcClick('tan(', this.form)"> </td> 
             </tr> 
             <tr>
-                <td><input type="button" class="calcButton" value="e" onclick="Calculator.calcDisplay.value+='e'"> </td> 
-                <td><input type="button" class="calcButton" value="PI" onclick="Calculator.calcDisplay.value+='Math.PI'"> </td> 
-                <td><input type="button" class="calcButton" value="^" onclick="Calculator.calcDisplay.value+='Math.pow('"> </td> 
-                <td><input type="button" class="calcButton" value="(" onclick="Calculator.calcDisplay.value+='('"> </td> 
-                <td><input type="button" class="calcButton" value=")" onclick="Calculator.calcDisplay.value+=')'"> </td> 
-                <td><input type="button" class="calcButton" value="log" onclick="Calculator.calcDisplay.value+='Math.log('"> </td>              
+                <td><input type="button" class="calcButton" value="e" onclick="calcClick('E', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="PI" onclick="calcClick('PI', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="^" onclick="calcClick('^', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="(" onclick="calcClick('(', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value=")" onclick="calcClick(')', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="log" onclick="calcClick('log(', this.form)"> </td>              
             <tr>
-                <td><input type="button" class="calcButton" value="sqrt" onclick="Calculator.calcDisplay.value+='Math.sqrt('"> </td> 
-                <td><input type="button" class="calcButton" value="ln2" onclick="Calculator.calcDisplay.value+='Math.LN2'"> </td> 
-                <td><input type="button" class="calcButton" value="ln10" onclick="Calculator.calcDisplay.value+='Math.Log10'"> </td> 
-                <td><input type="button" class="calcButton" value="l2e" onclick="Calculator.calcDisplay.value+='Math.LOG2E'"> </td> 
-                <td><input type="button" class="calcButton" value="l10e" onclick="Calculator.calcDisplay.value+='Math.log10'"> </td> 
-                <td><input type="button" class="calcButton" value="exp" onclick="Calculator.calcDisplay.value+='Math.exp('"> </td> 
+                <td><input type="button" class="calcButton" value="sqrt" onclick="calcClick('sqrt(', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="ln2" onclick="calcClick('LN2', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="ln10" onclick="calcClick('LN10', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="l2e" onclick="calcClick('LOG2E', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="l10e" onclick="calcClick('LOG10', this.form)"> </td> 
+                <td><input type="button" class="calcButton" value="exp" onclick="calcClick('exp', this.form)"> </td> 
             </tr> 
             </form> 
           </table> 
@@ -101,14 +101,19 @@
               <input type="text" id="dp" name="dp" style="text-align:center"> <br><br>
               <label for="cp">Cross Product = </label>
               <input type="text" id="cp1" name="cp1" style="text-align:center"><br>
-              <input type="text" id="cp2" name="cp2" style="text-align:center;margin-top:5;margin-left:105;"><br>
-              <input type="text" id="cp3" name="cp3" style="text-align:center;margin-top:5;margin-left:105;">
+              <input type="text" id="cp2" name="cp2" style="text-align:center;margin-top:5;margin-left:135;"><br>
+              <input type="text" id="cp3" name="cp3" style="text-align:center;margin-top:5;margin-left:135;">
           </form>
       </div>
 
       <div class="ScratchPaper">
           <h4>SCRATCH PAPER</h4><br>
-          <textarea rows="50" cols="80" id="Paper"></textarea><br>
+          <textarea rows="50" cols="67" id="Paper"></textarea><br><br>
+          <form>
+              <label for="FileName">File Name: </label>
+              <input type="text" id="FileName" name="FileName" style="text-align:center">
+              <p>Save as:</p>
+          </form>
       </div>
   </body>
 </html>
