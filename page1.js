@@ -75,15 +75,81 @@ function evaluateCalc(Calculator) {
             }
         }
 
-        // Calculator.calcDisplay.value = equation.substring(percentageStart, percentageStop); 
-
         percentageOf = eval(equation.substring(percentageStart, percentageStop));
         percentage = percentageOf/100;
         // Calculator.calcDisplay.value = equation.substring(percentageStart, percentageStop); 
         equation = equation.substring(0, percentageStart).concat(String(percentage).concat(equation.substring(percentageStop + 1, equation.length)));
     }
-
     result = eval(equation).toFixed(4); 
     if (result == "NaN") alert('This equation cannot be solved');
     else Calculator.calcDisplay.value = result; 
 } 
+
+var multChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '[', ']', ','];
+
+function calculateMult(Mult) {
+
+    if(checkMatricesFormat(Mult) && checkMatrixBrackets(Mult.Mult1) && checkMatrixBrackets(Mult.Mult2)) {
+        matrix1 = [];
+    }
+    return;
+}
+
+function fillMatrix(Matrix, list) {
+    list = []; 
+    var stack = new Stack();
+
+    for (i = 0; i < Matrix.value.length; i++) {
+        if
+
+    }
+
+}
+
+function checkMatrixBrackets(Matrix) {
+    right = 0;
+    left = 0;
+
+    for (i = 0; i < Matrix.value.length; i++) {
+        if (Matrix.value[i] == '[') right++;
+        else if (Matrix.value[i] == ']') left++;
+    }
+
+    if (right != left) {
+        alert('Matrix is missing a bracket');
+        return 0; 
+    } else return 1; 
+}
+
+function checkMatricesFormat(Form) {
+
+    if(Form.Mult1.value == "" || Form.Mult2.value == "") {
+        alert('Please fill matrices');
+        return;
+    }
+
+    matrix1Wrong = 0;
+    matrix2Wrong = 0;
+    
+    for(i = 0; i < Form.Mult1.value.length; i++) {
+        if(!(multChars.includes(Form.Mult1.value[i]))) {
+            matrix1Wrong = 1;
+            break;
+        }
+    }
+
+    for(i = 0; i < Form.Mult2.value.length; i++) {
+        if(!(multChars.includes(Form.Mult2.value[i]))) {
+            matrix2Wrong = 1;
+            break;
+        }
+    }
+
+    if(matrix1Wrong && matrix2Wrong) alert('Matrix 1 and 2 are in the incorrect format');
+    else if (matrix1Wrong) alert('Matrix 1 is in the incorrect format'); 
+    else if (matrix2Wrong) alert('Matrix 2 is in the incorrect format');
+
+    if(matrix1Wrong || matrix2Wrong) return 0;
+    else return 1;
+
+}
